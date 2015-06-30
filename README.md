@@ -9,7 +9,7 @@ $ python3 ./user_interface.py
 ![ScreenShot](StockMarket.png)
 ![ScreenShot2](Screenshot2.png)
 
-------------------------------------------------------------------------
+========================================================================
 
 Simple Stock Market Exchange (old school project UCI ICS 32 - Project 3)
 ------------------------------------------------------------------------
