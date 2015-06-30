@@ -6,13 +6,15 @@ On Linux / MacOS / *nix system run command :
 $ python3 ./user_interface.py
 
 
+
 ![ScreenShot](StockMarket.png)
 ![ScreenShot2](Screenshot2.png)
 
-========================================================================
+-----------------------------------------------------------------------
 
 Simple Stock Market Exchange (old school project UCI ICS 32 - Project 3)
 ------------------------------------------------------------------------
+
 
 This project loads a set of historical stock prices from the Yahoo web server, calculate a few metrics on those prices, and ultimately report on opportune times to buy or sell the stock, based on one of a few buying-and-selling strategies.
 
