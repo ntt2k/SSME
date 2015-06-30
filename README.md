@@ -9,9 +9,10 @@ $ python3 ./user_interface.py
 ![ScreenShot](StockMarket.png)
 ![ScreenShot2](Screenshot2.png)
 
-----------------------------------------
+------------------------------------------------------------------------
 
 Simple Stock Market Exchange (old school project UCI ICS 32 - Project 3)
+------------------------------------------------------------------------
 
 This project loads a set of historical stock prices from the Yahoo web server, calculate a few metrics on those prices, and ultimately report on opportune times to buy or sell the stock, based on one of a few buying-and-selling strategies.
 
@@ -37,6 +38,7 @@ Running the analysis
 
 
 Indicators
+==========
 
 The core of our analysis will be comparing daily prices against the values of indicators. There are two kinds of indicators we'll use:
 
