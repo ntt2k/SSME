@@ -1,3 +1,6 @@
+How to run:
+==========
+
 On Linux / MacOS / *nix system run command :
 
 $ python3 ./user_interface.py
@@ -37,33 +40,36 @@ Indicators
 
 The core of our analysis will be comparing daily prices against the values of indicators. There are two kinds of indicators we'll use:
 
-Simple moving average: 
+Simple moving average:
+---------------------- 
 
-	The N-day simple moving average at the end of a particular day is the average of the most recent N closing prices. Days on which there is no trading are not counted. So, for example, the 10-day simple moving average each day is simply the average of the most recent 10 closing prices. Note that the simple moving average on a particular day includes that day's closing price.
+The N-day simple moving average at the end of a particular day is the average of the most recent N closing prices. Days on which there is no trading are not counted. So, for example, the 10-day simple moving average each day is simply the average of the most recent 10 closing prices. Note that the simple moving average on a particular day includes that day's closing price.
 
-	One wrinkle to be aware of here: you need at least N days of prices before you can begin calculating a simple moving average. So the first N - 1 days will not have a simple moving average at all; only on the Nth day are there enough closing prices to report an N-day moving average.
+One wrinkle to be aware of here: you need at least N days of prices before you can begin calculating a simple moving average. So the first N - 1 days will not have a simple moving average at all; only on the Nth day are there enough closing prices to report an N-day moving average.
 
-Directional indicator: 
+Directional indicator:
+----------------------
 
-	The N-day directional indicator for a stock is the number of closing prices out of the most recent N on which the stock went up (i.e., it closed at a higher price than the previous close) minus the number of days out of the previous N on which the stock went down (i.e., closed at a lower price than the previous close). It stands to reason, for example, that the 10-day directional indicator will be somewhere between -10 and +10. As with the simple moving average, the directional indicator for a particular day includes that day's closing price.
+The N-day directional indicator for a stock is the number of closing prices out of the most recent N on which the stock went up (i.e., it closed at a higher price than the previous close) minus the number of days out of the previous N on which the stock went down (i.e., closed at a lower price than the previous close). It stands to reason, for example, that the 10-day directional indicator will be somewhere between -10 and +10. As with the simple moving average, the directional indicator for a particular day includes that day's closing price.
 
-	Unlike simple moving averages, directional indicators are always possible to calculate. In a given report, the first day's indicator value will always be 0, because you don't know whether the stock's move that day was up or down (since you don't have the previous day's price). When there are fewer than N days of prices, you simply calculate the directional indicator using the number of days you have available.
-	There are many other indicators that are used by those people and programs making buying and selling decisions on stocks, but these are a good start for us.
+Unlike simple moving averages, directional indicators are always possible to calculate. In a given report, the first day's indicator value will always be 0, because you don't know whether the stock's move that day was up or down (since you don't have the previous day's price). When there are fewer than N days of prices, you simply calculate the directional indicator using the number of days you have available.
+There are many other indicators that are used by those people and programs making buying and selling decisions on stocks, but these are a good start for us.
 
-Signal strategies
+Signal strategies:
+------------------
 
 The main goal of the analysis is to generate buy signals and sell signals, which are recommendations to buy or sell stock at the conclusion of a particular day. There are two strategies, corresponding to the indicators above:
 
 Generate buy and sell signals based on the N-day simple moving average, with the user choosing N (i.e., the number of days). 
 Signals are generated as follows:
 
-	If the closing price on a particular day has crossed above the simple moving average (i.e., the closing price on that day is above that day's simple moving average, while the previous closing price is not above the previous simple moving average), generate a buy signal.
-	If the closing price on a particular day has crossed below the simple moving average, generate a sell signal.
-	Otherwise, generate no signal.
+If the closing price on a particular day has crossed above the simple moving average (i.e., the closing price on that day is above that day's simple moving average, while the previous closing price is not above the previous simple moving average), generate a buy signal.
+If the closing price on a particular day has crossed below the simple moving average, generate a sell signal.
+Otherwise, generate no signal.
 
 Generate buy and sell signals based on the N-day directional indicator, with the user choosing N (i.e., the number of days) and buy and sell thresholds.
 
-	If the directional indicator has crossed above the buy threshold (i.e., the indicator above the buy threshold on that day but is not above the buy threshold on the previous day), generate a buy signal.
-	If the directional indicator has crossed below the sell threshold, generate a sell signal.
-	Otherwise, generate no signal.
+If the directional indicator has crossed above the buy threshold (i.e., the indicator above the buy threshold on that day but is not above the buy threshold on the previous day), generate a buy signal.
+If the directional indicator has crossed below the sell threshold, generate a sell signal.
+Otherwise, generate no signal.
 
