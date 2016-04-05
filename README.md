@@ -8,7 +8,7 @@ $ python3 ./user_interface.py
 
 
 ![ScreenShot](screenshot/screenshot1.png)
-![ScreenShot](screenshot/screenshot2.png)
+![ScreenShot22](screenshot/screenshot2.png)
 
 -----------------------------------------------------------------------
 
